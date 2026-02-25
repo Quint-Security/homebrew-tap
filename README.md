@@ -28,4 +28,4 @@ quint connect       # Manage OAuth credentials
 ## More
 
 - [Documentation](https://github.com/Quint-Security/proxy)
-- [Website](https://quintsecurity.com)
+- [Website](https://quintai.dev)
