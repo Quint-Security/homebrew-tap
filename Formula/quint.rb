@@ -1,39 +1,34 @@
 class Quint < Formula
   desc "Security gateway for AI agents — RBAC, risk scoring, signed audit trails"
   homepage "https://github.com/Quint-Security/proxy"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Quint-Security/proxy/releases/download/v0.3.1/quint-v0.3.1-darwin-arm64.tar.gz"
-      sha256 "4c9acf96b20c5eb6bbc45d7f8862558f38d51e534e746e33d0657c3b69ee332d"
-
-      def install
-        bin.install "quint-darwin-arm64" => "quint"
-      end
+      url "https://github.com/Quint-Security/proxy/releases/download/v0.4.0/quint-darwin-arm64.tar.gz"
+      sha256 "4e938061d52314c1d3efef5c3f5e6fb1401ab34ef34915c4d327601dd81b1517"
     else
-      url "https://github.com/Quint-Security/proxy/releases/download/v0.3.1/quint-v0.3.1-darwin-amd64.tar.gz"
-      sha256 "4fe5b4e833ffd639e6002890645a9dac9c6b51f2f7e162f99414957724c4be21"
-
-      def install
-        bin.install "quint-darwin-amd64" => "quint"
-      end
+      url "https://github.com/Quint-Security/proxy/releases/download/v0.4.0/quint-darwin-x64.tar.gz"
+      sha256 "1a1b5c87bc826474abbaa480e18cade21d4e62b0017c5a6a9422404ea4574884"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Quint-Security/proxy/releases/download/v0.3.1/quint-v0.3.1-linux-amd64.tar.gz"
-      sha256 "0448fc2c90ac997e07f5da255d5f17843e19474e749eb84706c82e7cf94ce43e"
-
-      def install
-        bin.install "quint-linux-amd64" => "quint"
-      end
+      url "https://github.com/Quint-Security/proxy/releases/download/v0.4.0/quint-linux-x64.tar.gz"
+      sha256 "be39f472971b1e494c944f479e73d4ff7701d7a5712e5af14cf7b2fd89eaa1db"
+    else
+      url "https://github.com/Quint-Security/proxy/releases/download/v0.4.0/quint-linux-arm64.tar.gz"
+      sha256 "c503ffdd9f38aee48167d0b944d35c09534325ba601740e353024bb0c25908ef"
     end
   end
 
+  def install
+    bin.install "quint"
+  end
+
   test do
-    assert_match "0.3.1", shell_output("#{bin}/quint version")
+    assert_match "Quint", shell_output("#{bin}/quint --help 2>&1")
   end
 end
