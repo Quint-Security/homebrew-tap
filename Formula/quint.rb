@@ -7,20 +7,20 @@ class Quint < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Quint-Security/proxy/releases/download/v0.5.0/quint-darwin-arm64.tar.gz"
-      sha256 "c0fbb5da80d553cff8ec66bb4c23b43f1d8c4e8a03c022cf973dd8b9bfa81af1"
+      sha256 "05b1f7224fd1b271ed2ab135075b8bebc5e7578baeff3cdd40858686c094c978"
     else
       url "https://github.com/Quint-Security/proxy/releases/download/v0.5.0/quint-darwin-x64.tar.gz"
-      sha256 "6ac776240dc3430e47d961a7dfdc1e4738979f80bfa7ba4eafaa2a1c649faa07"
+      sha256 "6f344bc399066793687238c1b74cfa43ab200f77858467d04f61909aba72059b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/Quint-Security/proxy/releases/download/v0.5.0/quint-linux-x64.tar.gz"
-      sha256 "bed233bdf1bd595c462f940d9e55e2b083ab8b1c11aa0546650abcb2373cb8d5"
+      sha256 "376388d4e389eb6d6cdb5bff3e9e528421e001300364e0a636c0622e139ff4ef"
     else
       url "https://github.com/Quint-Security/proxy/releases/download/v0.5.0/quint-linux-arm64.tar.gz"
-      sha256 "34b6a971467a5a9d066ff7399ea2aa640986f9accef6aed6e4fe5c80d0f187c5"
+      sha256 "0b4aac56b6fc17e427126c656b8091c505747f8c5e1a07e479f55cd8b6365a97"
     end
   end
 
